@@ -78,3 +78,6 @@ export const ButtonDiv = styled.button<Primary>`
     padding: 7px 3px;
     margin: 5px;
 `
+export const ImgDiv = styled.image`
+    width: 150px;
+`

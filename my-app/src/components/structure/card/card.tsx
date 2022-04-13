@@ -1,13 +1,14 @@
 import React from "react";
-import { CardDiv, NameText, ButtonDiv, IdadeText, EmailText, WhatsappText, FoneText, RgText, CpfText, ExperienceEventsText, AdressText } from "./style";
+import { CardDiv, NameText, ButtonDiv, IdadeText, EmailText, WhatsappText, FoneText, RgText, CpfText, ExperienceEventsText, AdressText, ImgDiv } from "./style";
 
 export function Card (props: any){
     return (
         <CardDiv>
+           
+            
             <div>
-                <img src={props.pic} alt={props.name}></img>
-            </div>
-            <div>
+                <ImgDiv>{props.pic}</ImgDiv>
+
                 <NameText>{props.name}</NameText>
                 <IdadeText>{props.idade}</IdadeText>
                 <EmailText>{props.email}</EmailText>
