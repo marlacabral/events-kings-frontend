@@ -1,26 +1,27 @@
 import React from "react";
-import { CardDiv, ImageDiv } from "./style";
+import { CardDiv, NameText, ButtonDiv, IdadeText, EmailText, WhatsappText, FoneText, RgText, CpfText, ExperienceEventsText, AdressText } from "./style";
 
-export function Card (){
+export function Card (props: any){
     return (
         <CardDiv>
             <div>
-                <h5>Marla Cabral</h5>
-                <h5>32 anos</h5>
-                <h5>roncolicabral@gmail.com</h5>
-                <h5>51996140140</h5>
-                <h5>73998517608</h5>
-                <h5>8093744012</h5>
-                <h5>01361186070</h5>
-                <h5>Garçonete, bar, caixa</h5>
+                <img src={props.pic} alt={props.name}></img>
+            </div>
+            <div>
+                <NameText>{props.name}</NameText>
+                <IdadeText>{props.idade}</IdadeText>
+                <EmailText>{props.email}</EmailText>
+                <WhatsappText>{props.whatsapp}</WhatsappText>
+                <FoneText>{props.fone}</FoneText>
+                <RgText>{props.rg}</RgText>
+                <CpfText>{props.cpf}</CpfText>
+                <ExperienceEventsText>{props.experienceEvents}</ExperienceEventsText>
+                <AdressText>{props.adress}</AdressText>
             </div>
 
             <div>
-                <img src="./images/img2.png" alt="Imagem de Marla Cabral"></img>
-            </div>
-            
-            <div>
-                <button className="btn-adicionar">Adicionar</button>
+                <ButtonDiv primary={false} >Adicionar</ButtonDiv>
+                <ButtonDiv primary={true} >Deletar</ButtonDiv>
             </div>
             
         </CardDiv>
