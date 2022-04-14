@@ -2,9 +2,12 @@ import React from "react";
 import styled from 'styled-components';
 
 const Title = styled.a `
-    color: #fff;
+    color: yellow;
     font-size: 2rem;
     text-decoration: none;
+    :hover{
+        color: #fff;
+    }
 `
 
 export function Header (){

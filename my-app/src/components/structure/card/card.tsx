@@ -1,14 +1,37 @@
-import React from "react";
-import { CardDiv, NameText, ButtonDiv, IdadeText, EmailText, WhatsappText, FoneText, RgText, CpfText, ExperienceEventsText, AdressText, ImgDiv } from "./style";
+import React, { useState } from "react";
+import { CardDiv, NameText, ButtonDiv, IdadeText, EmailText, WhatsappText, FoneText, RgText, CpfText, ExperienceEventsText, AdressText, NumberDiv, NumberElement } from "./style";
 
-export function Card (props: any){
+type PropsColaborador = {
+    name: string,
+    pic: string,
+    idade: string,
+    email: string,
+    whatsapp: string,
+    fone: string,
+    rg: string,
+    cpf: string,
+    experienceEvents: string,
+    adress: string,
+};
+
+export function Card (props: PropsColaborador){
+    const [colaboradorAdicionado, setColaboradorAdicionado] = useState<number>(0)
+
+    function adicionarColaborador(){
+        setColaboradorAdicionado(colaboradorAdicionado + 1)
+    }
+
+    function removerColaborador(){
+        setColaboradorAdicionado(colaboradorAdicionado - 1)
+    }
+
     return (
         <CardDiv>
-           
-            
+            <NumberDiv><NumberElement>{colaboradorAdicionado}</NumberElement></NumberDiv>
             <div>
-                <ImgDiv>{props.pic}</ImgDiv>
-
+                <img src={props.pic} width="120px" alt={props.name}></img>
+            </div>
+            <div>
                 <NameText>{props.name}</NameText>
                 <IdadeText>{props.idade}</IdadeText>
                 <EmailText>{props.email}</EmailText>
@@ -21,10 +44,15 @@ export function Card (props: any){
             </div>
 
             <div>
-                <ButtonDiv primary={false} >Adicionar</ButtonDiv>
-                <ButtonDiv primary={true} >Deletar</ButtonDiv>
-            </div>
-            
-        </CardDiv>
+                { colaboradorAdicionado > 0 ?
+                <>
+                    <ButtonDiv primary={false} onClick={adicionarColaborador}>Adicionar</ButtonDiv>
+                    <ButtonDiv primary={true} onClick={removerColaborador}>Deletar</ButtonDiv>
+                </>
+                :
+                    <ButtonDiv primary={false} onClick={adicionarColaborador}>Adicionar</ButtonDiv>
+                }
+                </div>
+        </CardDiv>   
     )
 }

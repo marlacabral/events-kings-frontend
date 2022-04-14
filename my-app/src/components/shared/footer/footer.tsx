@@ -3,11 +3,10 @@ import { FooterDiv } from './style';
 
 export function Footer (){
     return (
-        <div className="fixed-bottom">
+        <div className="footer fixed-bottom">
             <FooterDiv>
-                <h2>Kings Eventos Atendimento LTDA</h2>
+                <h2>Kings Eventos LTDA</h2>
             </FooterDiv>
-    
         </div>
     )
 }
