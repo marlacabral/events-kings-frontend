@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Header } from "../../components/shared/header/header";
-import { Footer } from "../../components/shared/footer/footer";
 import { Card } from "../../components/structure/card/card";
 import { HomeDiv, InvisibleButton } from "../../pages/home/style";
 import { staffApi } from '../../services/staffApi';
@@ -16,7 +14,7 @@ type Colaborador = {
   fone: string,
   rg: string,
   cpf: string,
-  experienceEvents: string,
+  experienceEvents: boolean,
   adress: string,
   pic: string,
 }
@@ -45,7 +43,6 @@ export function Home() {
 
   return (
     <>
-        <Header/>
         <HomeDiv>
           {staff?.map(colaborador => {
             return (
@@ -80,7 +77,6 @@ export function Home() {
         </div>
           : null
           }   
-        <Footer/>
     </>
   );
 }

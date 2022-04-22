@@ -10,7 +10,7 @@ type PropsColaborador = {
     fone: string,
     rg: string,
     cpf: string,
-    experienceEvents: string,
+    experienceEvents: boolean,
     adress: string,
 };
 
