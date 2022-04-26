@@ -7,7 +7,7 @@ import './Style.css';
 type Colaborador = {
   _id: string,
   created: string,
-  name: string,
+  nome: string,
   idade: string,
   email: string,
   whatsapp: string,
@@ -49,7 +49,7 @@ export function Home() {
               <InvisibleButton onClick={modalControl} key={colaborador._id}>
                 <Card 
                 key={colaborador._id}
-                name={colaborador.name}
+                nome={colaborador.nome}
                 idade={colaborador.idade}
                 email={colaborador.email}
                 whatsapp={colaborador.whatsapp}

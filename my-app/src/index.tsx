@@ -21,8 +21,9 @@ root.render(
     <Header />
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/create" element={<CreatedForm />} />
+        <Route path="/update/:id" element={<CreatedForm update={true} />} />
       </Routes>   
     </BrowserRouter>
     <Footer />
